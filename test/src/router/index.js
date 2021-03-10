@@ -10,9 +10,9 @@ const routes = [
         component: () => import(/* webpackChunkName: "about" */ '../components/HelloWorld')
     },
     {
-        path: '/Todos',
-        name: 'Todos',
-        component: () => import(/* webpackChunkName: "about" */ '../components/Todos')
+        path: '/Pokemon',
+        name: 'Pokemon',
+        component: () => import(/* webpackChunkName: "about" */ '../components/Pokemon')
     },
 ]
 
