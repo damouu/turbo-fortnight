@@ -3,13 +3,13 @@ const Pokemon = require('../models/Pokemon');
 
 module.exports = server => {
 
-    server.get('/pokemon', async (req, res, next) => {
+    server.get('/api/pokemon', async (req, res, next) => {
         const pokemon = await Pokemon.find({});
         res.send(pokemon);
         next();
     });
 
-    server.get('/pokemon/:id', async (req, res, next) => {
+    server.get('/api/pokemon/:id', async (req, res, next) => {
         try {
             const pokemon = await Pokemon.findById(req.params.id);
             res.send(pokemon);
@@ -19,7 +19,7 @@ module.exports = server => {
         }
     });
 
-    server.post('/pokemon', async (req, res, next) => {
+    server.post('/api/pokemon', async (req, res, next) => {
         const {name, email} = req.body;
         try {
             const pokemon = new Pokemon({
@@ -33,7 +33,7 @@ module.exports = server => {
         }
     });
 
-    server.put('/pokemon/:id', async (req, res, next) => {
+    server.put('/api/pokemon/:id', async (req, res, next) => {
         try {
             const pokemon = await Pokemon.findOneAndUpdate({_id: req.params.id}, req.body);
             res.send(204);
@@ -43,7 +43,7 @@ module.exports = server => {
         }
     });
 
-    server.del('/pokemon/:id', async (req, res, next) => {
+    server.del('/api/pokemon/:id', async (req, res, next) => {
         try {
             const pokemon = await Pokemon.findOneAndRemove({_id: req.params.id});
             res.send(204);
