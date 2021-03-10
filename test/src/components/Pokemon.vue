@@ -30,7 +30,7 @@
 import axios from "axios";
 
 export default {
-  name: "Todos",
+  name: "Pokemon",
   methods: {
     getPokemons() {
       axios.get("http://localhost:3000/api/pokemon").then(response => this.$data.pokemons.push(response.data))
