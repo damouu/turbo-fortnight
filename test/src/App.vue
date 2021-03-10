@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link>
       |
-      <router-link to="/Todos">Todos</router-link>
+      <router-link to="/Pokemon">Pokemon</router-link>
     </div>
     <router-view/>
   </div>
