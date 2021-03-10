@@ -4,6 +4,15 @@ const config = require('./config');
 
 const server = restify.createServer();
 server.use(restify.plugins.bodyParser());
+
+server.use(
+    function crossOrigin(req, res, next) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "X-Requested-With");
+        return next();
+    }
+);
+
 server.listen(config.PORT, () => {
     mongoose.connect(
         config.MONGODB_URI,
